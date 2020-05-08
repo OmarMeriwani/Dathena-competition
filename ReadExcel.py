@@ -12,4 +12,4 @@ def ReadExcel(path):
     print(text)
     return text
 
-ReadExcel("E:/dathena-competition/files/Keppel/A-K.xls")
+#ReadExcel("E:/dathena-competition/files/Keppel/A-K.xls")

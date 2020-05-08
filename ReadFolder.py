@@ -12,5 +12,8 @@ def GetFilesInFolder(path):
         fileExt = fileS[len(fileS) - 1]
         print(fileExt)
 
-
+def getFileExt(file):
+    fileS = file.split('.')
+    fileExt = fileS[len(fileS) - 1]
+    return fileExt
 #GetFilesInFolder(mypath)
