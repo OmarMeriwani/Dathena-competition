@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 
 df = pd.read_csv('dataset.csv').values.tolist()
 df2 = pd.DataFrame(columns=['fileid','company','text'])
@@ -9,9 +10,11 @@ for doc in df:
     print(company)
     text = str(doc[3])
     usefultext = ''
-    paragraphs = [str(p).lower() for p in text.split('.')]
+    #paragraphs = [str(p).lower() for p in text.split('.')]
+    paragraphs = re.split('.', text)
     for p in paragraphs:
-        if p.find(company.lower()) != -1:
+        print(p)
+        if p.lower().find(company.lower()) != -1:
             usefultext += p + '\n'
             print(p)
     df2.loc[seq] = [id,company, usefultext]
